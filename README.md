@@ -3,7 +3,7 @@ Acá encontras codigo para tu pokédex.
 
 Estimación de tiempos:
 
-*Creación del README: Estimación: 20' | Tiempo:
+*Creación del README: Estimación: 20' | Tiempo: 17'
 *Creación del Logo: Estimación: 15' | Tiempo:
 
 *Estructura de la homepage: Estimación: 15' | Tiempo:
