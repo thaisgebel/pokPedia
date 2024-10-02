@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokPedia</title>
+    <link rel="stylesheet" href="homePage.css" />
+  </head>
+  <body>
+    <header>
+      <img src="img/logoPokPedia.png" alt="logo" />
+      <nav>
+        <input type="search" placeholder="Busca aca tu pokémon por nombre" />
+        <button type="submit" title="Buscar">
+          <i
+            class="fa-solid fa-magnifying-glass fa-flip-horizontal"
+            style="color: #000000"
+          ></i>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <p>Busqueda Avanzada</p>
+      <div id="container-filter">
+        <div id="filter-type">
+          <h2>Tipo</h2>
+          <span>Normal</span>
+          <span>Acero</span>
+          <span>Siniestro</span>
+          <span>Eléctrico</span>
+          <span>Roca</span>
+          <span>Tierra</span>
+          <span>Agua</span>
+          <span>Hielo</span>
+          <span>Fuego</span>
+          <span>Lucha</span>
+          <span>Planta</span>
+          <span>Bicho</span>
+          <span>Veneno</span>
+          <span>Fantasma</span>
+          <span>Hada</span>
+          <span>Psíquico</span>
+          <span>Dragon</span>
+          <span>Volador</span>
+        </div>
+        <div id="filter-ID">
+          <h2>Por ID</h2>
+          <input type="search" placeholder="Busca aca tu pokémon por ID" />
+          <button type="submit" title="Buscar">
+            <i
+              class="fa-solid fa-magnifying-glass fa-flip-horizontal"
+              style="color: #000000"
+            ></i>
+          </button>
+        </div>
+      </div>
+      <div id="container-order">
+        <button type="menu">Ordenar por</button>
+      </div>
+      <div id="container-cards-pokemons"></div>
+      <button title="Anterior Pagina">
+        <i class="fa-solid fa-caret-left" style="color: #000000"></i>
+      </button>
+      <button title="Siguiente Pagina">
+        <i class="fa-solid fa-caret-right" style="color: #000000"></i>
+      </button>
+    </main>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/7fef3468f2.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
