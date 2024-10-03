@@ -9,9 +9,11 @@ Estimación de tiempos:
 
 *Estructura de la homepage: Estimación: 15' | Tiempo: 30'
 
-*Estructura de la visualización del Pokémon: Estimación: 15' | Tiempo:
+*Estructura de la visualización de carta del Pokémon: Estimación: 15' | Tiempo:
 
 *Funcionalidad del buscador: Estimación: 3 horas | Tiempo:
+
+*Funcionalidad de la carta Pokémon: 2 horas | Tiempo: 2 horas
 
 *Filtrar por Tipo de Pokémon: Estimación: 2 horas | Tiempo:                                (es un extra que seguro realizaré si me sobra tiempo)
 
