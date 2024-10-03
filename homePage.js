@@ -17,18 +17,24 @@ const containerCardsPokemons = document.getElementById(
 function createCardPokemon(information) {
   for (let index = 0; index < information.results.length; index++) {
     let cardPokemon = document.createElement("div");
+    let containerNamesAndIds = document.createElement("div");
     let namePokemon = document.createElement("p");
     let idPokemon = document.createElement("span");
+    let imagePokemon = document.createElement("img");
 
     containerCardsPokemons.append(cardPokemon);
-    cardPokemon.append(namePokemon);
-    cardPokemon.append(idPokemon);
+    containerNamesAndIds.append(namePokemon);
+    containerNamesAndIds.append(idPokemon);
+    cardPokemon.append(containerNamesAndIds);
+    cardPokemon.append(imagePokemon);
 
     informationIndividualPokemon(information.results[index].url).then(
       (individualPokemon) => {
         namePokemon.textContent = individualPokemon.name;
-        idPokemon.textContent = individualPokemon.id;
+        idPokemon.textContent = `ID: ${individualPokemon.id}`;
         createTypes(individualPokemon, cardPokemon);
+        imagePokemon.src =
+          individualPokemon.sprites.other["official-artwork"].front_default;
       }
     );
   }
@@ -43,10 +49,14 @@ function getTypes(data) {
 
 function createTypes(individualPokemon, cardPokemon) {
   let arrayTypes = getTypes(individualPokemon);
+  let containerTypes = document.createElement("div");
+  cardPokemon.append(containerTypes);
 
   for (let index = 0; index < arrayTypes.length; index++) {
     let typePokemon = document.createElement("p");
+    typePokemon.classList.add(arrayTypes[index]);
+    typePokemon.classList.add("container-types");
     typePokemon.textContent = arrayTypes[index];
-    cardPokemon.append(typePokemon);
+    containerTypes.append(typePokemon);
   }
 }
