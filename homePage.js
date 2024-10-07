@@ -97,20 +97,40 @@ function createCardPokemon(information) {
     );
   }
 }
+
 const buttonPreviousPage = document.getElementById("button-previous-page");
-
-buttonPreviousPage.addEventListener("click", function () {
-  if (currentPagination > 0) {
-    currentPagination -= 1;
-    createCardPokemon(pokemonsFiltradospaginacion);
-  }
-});
-
 const buttonNextPage = document.getElementById("button-next-page");
 
+buttonPreviousPage.classList.add("hidden");
+
+buttonPreviousPage.addEventListener("click", function () {
+  prevAnswer();
+  createCardPokemon(pokemonsFiltradospaginacion);
+});
+
 buttonNextPage.addEventListener("click", function () {
+  nextAnswer();
+  createCardPokemon(pokemonsFiltradospaginacion);
+});
+
+buttonPreviousPage.classList.add("hidden");
+
+function prevAnswer() {
+  if (currentPagination > 0) {
+    currentPagination -= 1;
+    buttonNextPage.classList.remove("hidden");
+  }
+  if (currentPagination === 0) {
+    buttonPreviousPage.classList.add("hidden");
+  }
+}
+
+function nextAnswer() {
   if (currentPagination < pokemonsFiltradospaginacion.length - 1) {
     currentPagination += 1;
-    createCardPokemon(pokemonsFiltradospaginacion);
+    buttonPreviousPage.classList.remove("hidden");
   }
-});
+  if (currentPagination === pokemonsFiltradospaginacion.length - 1) {
+    buttonNextPage.classList.add("hidden");
+  }
+}
