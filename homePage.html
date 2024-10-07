@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokPedia</title>
     <link rel="stylesheet" href="homePage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <img src="img/logoPokPedia.png" alt="logo" />
+      <img src="img/logoPokPedia.svg" alt="logo" id="logo" />
       <nav>
         <input
           id="search-bar-by-name"
           type="search"
-          placeholder="Busca aca tu pokémon por nombre"
+          placeholder="Search here for your pokemon by name c:"
         />
         <button id="button-bar-by-name" type="submit" title="Buscar">
           <i
@@ -24,54 +30,28 @@
       </nav>
     </header>
     <main>
-      <p>Advanced search</p>
-      <div id="container-filter">
-        <div id="filter-type">
-          <h2>Tipo</h2>
-          <span>Normal</span>
-          <span>Steel</span>
-          <span>Dark</span>
-          <span>Electric</span>
-          <span>Rock</span>
-          <span>Ground</span>
-          <span>Water</span>
-          <span>Ice</span>
-          <span>Fire</span>
-          <span>Fighting</span>
-          <span>Grass</span>
-          <span>Bug</span>
-          <span>Poison</span>
-          <span>Ghost</span>
-          <span>Fairy</span>
-          <span>Psychic</span>
-          <span>Dragon</span>
-          <span>Flying</span>
-        </div>
-        <div id="filter-ID">
-          <h2>By ID</h2>
-          <input
-            id="search-bar-by-id"
-            type="search"
-            placeholder="Busca aca tu pokémon por ID"
-          />
-          <button id="button-bar-by-id" type="submit" title="Buscar">
-            <i
-              class="fa-solid fa-magnifying-glass fa-flip-horizontal"
-              style="color: #000000"
-            ></i>
-          </button>
-        </div>
-      </div>
       <div id="container-order">
-        <button type="menu">Sort by</button>
+        <div id="container-cards-pokemons"></div>
       </div>
-      <div id="container-cards-pokemons"></div>
-      <button id="button-previous-page" title="Previous page">
-        <i class="fa-solid fa-caret-left" style="color: #000000"></i>
-      </button>
-      <button id="button-next-page" title="Next Page">
-        <i class="fa-solid fa-caret-right" style="color: #000000"></i>
-      </button>
+      <div id="container-buttons">
+        <button id="button-previous-page" title="Previous page">
+          <i class="fa-solid fa-caret-left" style="color: #000000"></i>
+          Prev
+        </button>
+        <button id="button-next-page" title="Next Page">
+          Next
+          <i class="fa-solid fa-caret-right" style="color: #000000"></i>
+        </button>
+      </div>
+
+      <div id="container-loading-screen">
+        <p>
+          <i
+            class="fa-solid fa-rotate-right fa-spin"
+            style="color: #000000"
+          ></i>
+        </p>
+      </div>
     </main>
   </body>
   <script
