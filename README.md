@@ -11,7 +11,7 @@ Estimación de tiempos:
 
 *Estructura de la visualización de carta del Pokémon: Estimación: 15' | Tiempo:
 
-*Funcionalidad del buscador: Estimación: 3 horas | Tiempo:
+*Funcionalidad del buscador: Estimación: 3 horas | Tiempo: 4hs
 
 *Funcionalidad de la carta Pokémon: 2 horas | Tiempo: 2 horas
 
