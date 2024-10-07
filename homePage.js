@@ -18,6 +18,7 @@ function getInformationPokemon(url) {
 
 const searchBarByName = document.getElementById("search-bar-by-name");
 const buttonBarByName = document.getElementById("button-bar-by-name");
+const divLoadingScreen = document.getElementById("container-loading-screen");
 
 buttonBarByName.addEventListener("click", function () {
   let pokemonsFilterByName = filterBarByName(
@@ -57,11 +58,11 @@ function getTypes(data) {
 function createTypes(individualPokemon, cardPokemon) {
   let arrayTypes = getTypes(individualPokemon);
   let containerTypes = document.createElement("div");
+  containerTypes.classList.add("container-types");
   cardPokemon.append(containerTypes);
   for (let index = 0; index < arrayTypes.length; index++) {
     let typePokemon = document.createElement("p");
     typePokemon.classList.add(arrayTypes[index]);
-    typePokemon.classList.add("container-types");
     typePokemon.textContent = arrayTypes[index];
     containerTypes.append(typePokemon);
   }
@@ -78,23 +79,29 @@ function createCardPokemon(information) {
     let cardPokemon = document.createElement("div");
     cardPokemon.classList.add("card-pokemon");
     let containerNamesAndIds = document.createElement("div");
+    containerNamesAndIds.classList.add("container-names-ids");
     let namePokemon = document.createElement("p");
     let idPokemon = document.createElement("span");
+    let containerImage = document.createElement("div");
+    containerImage.classList.add("container-image");
     let imagePokemon = document.createElement("img");
     containerCardsPokemons.append(cardPokemon);
     cardPokemon.append(containerNamesAndIds);
     containerNamesAndIds.append(namePokemon);
     containerNamesAndIds.append(idPokemon);
-    cardPokemon.append(imagePokemon);
-    getInformationPokemon(information[currentPagination][index].url).then(
-      (individualPokemon) => {
+    containerImage.append(imagePokemon);
+    cardPokemon.append(containerImage);
+    getInformationPokemon(information[currentPagination][index].url)
+      .then((individualPokemon) => {
         namePokemon.textContent = individualPokemon.name;
         idPokemon.textContent = `ID: ${individualPokemon.id}`;
         createTypes(individualPokemon, cardPokemon);
         imagePokemon.src =
           individualPokemon.sprites.other["official-artwork"].front_default;
-      }
-    );
+      })
+      .finally(() => {
+        hideLoadingScreen();
+      });
   }
 }
 
@@ -106,11 +113,13 @@ buttonPreviousPage.classList.add("hidden");
 buttonPreviousPage.addEventListener("click", function () {
   prevAnswer();
   createCardPokemon(pokemonsFiltradospaginacion);
+  showLoadingScreen();
 });
 
 buttonNextPage.addEventListener("click", function () {
   nextAnswer();
   createCardPokemon(pokemonsFiltradospaginacion);
+  showLoadingScreen();
 });
 
 buttonPreviousPage.classList.add("hidden");
@@ -133,4 +142,12 @@ function nextAnswer() {
   if (currentPagination === pokemonsFiltradospaginacion.length - 1) {
     buttonNextPage.classList.add("hidden");
   }
+}
+
+function showLoadingScreen() {
+  divLoadingScreen.style.display = "block";
+}
+
+function hideLoadingScreen() {
+  divLoadingScreen.style.display = "none";
 }
