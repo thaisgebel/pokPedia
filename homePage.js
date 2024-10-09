@@ -151,3 +151,11 @@ function showLoadingScreen() {
 function hideLoadingScreen() {
   divLoadingScreen.style.display = "none";
 }
+
+const buttonAdvancedSearch = document.getElementById("button-advanced-search");
+const containerFilterType = document.getElementById("container-filter-type");
+containerFilterType.classList.add("hidden");
+
+buttonAdvancedSearch.addEventListener("click", function () {
+  containerFilterType.classList.toggle("hidden");
+});
