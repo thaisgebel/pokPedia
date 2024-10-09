@@ -73,6 +73,44 @@
 .hidden {
   display: none;
 }
+.container-separation {
+  display: flex;
+}
+
+#container-filter {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#container-filter-type {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#container-filter-type button {
+  border-style: none;
+  width: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#button-advanced-search {
+  background-color: floralwhite;
+  height: 50px;
+  width: 500px;
+  font-weight: bold;
+  font-size: 22px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-style: none;
+  cursor: pointer;
+}
 
 #logo {
   width: 75px;
@@ -96,11 +134,10 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Jura", sans-serif;
+  background-color: #728c93;
 }
 
 main {
-  background-color: #728c93;
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
