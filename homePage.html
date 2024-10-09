@@ -13,30 +13,6 @@
     />
   </head>
   <body>
-    <p>Advanced search</p>
-    <div id="container-filter">
-      <div id="filter-type">
-        <h2>By Types</h2>
-        <span>Normal</span>
-        <span>Steel</span>
-        <span>Dark</span>
-        <span>Electric</span>
-        <span>Rock</span>
-        <span>Ground</span>
-        <span>Water</span>
-        <span>Ice</span>
-        <span>Fire</span>
-        <span>Fighting</span>
-        <span>Grass</span>
-        <span>Bug</span>
-        <span>Poison</span>
-        <span>Ghost</span>
-        <span>Fairy</span>
-        <span>Psychic</span>
-        <span>Dragon</span>
-        <span>Flying</span>
-      </div>
-    </div>
     <header>
       <img src="img/logoPokPedia.svg" alt="logo" id="logo" />
       <nav>
@@ -54,6 +30,34 @@
       </nav>
     </header>
     <main>
+      <div id="container-filter">
+        <button id="button-advanced-search">Advanced search</button>
+        <div id="container-filter-type">
+          <h2>By Types</h2>
+          <div class="container-separation">
+            <button class="normal">Normal</button>
+            <button class="steel">Steel</button>
+            <button class="dark">Dark</button>
+            <button class="electric">Electric</button>
+            <button class="rock">Rock</button>
+            <button class="ground">Ground</button>
+            <button class="water">Water</button>
+            <button class="ice">Ice</button>
+            <button class="fire">Fire</button>
+          </div>
+          <div class="container-separation">
+            <button class="fighting">Fighting</button>
+            <button class="grass">Grass</button>
+            <button class="bug">Bug</button>
+            <button class="poison">Poison</button>
+            <button class="ghost">Ghost</button>
+            <button class="fairy">Fairy</button>
+            <button class="psychic">Psychic</button>
+            <button class="dragon">Dragon</button>
+            <button class="flying">Flying</button>
+          </div>
+        </div>
+      </div>
       <div id="container-order">
         <div id="container-cards-pokemons"></div>
       </div>
